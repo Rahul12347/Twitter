@@ -1,10 +1,11 @@
 import axios from "axios";
-const jwtToken = localStorage.getItem("jwt")
+
 export const API_BASE_URL = 'https://twitter-server-production-9db4.up.railway.app/';
+const jwt = localStorage.getItem("jwt")
 export const api = axios.create({
   baseURL: API_BASE_URL, 
   headers: {
-    'Authorization':`Bearer ${jwtToken}`,
+    'Authorization':`Bearer ${jwt}`,
     'Content-Type': 'application/json',
   },
 });
